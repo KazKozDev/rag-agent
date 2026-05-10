@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="fav_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5AA9FF"/>
+      <stop offset="100%" stop-color="#0A84FF"/>
+    </linearGradient>
+    <linearGradient id="fav_gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Filled bookmark, scaled up to fill the favicon canvas -->
+  <path d="M24 28 16 22.5 8 28V6.5A3.5 3.5 0 0 1 11.5 3h9A3.5 3.5 0 0 1 24 6.5z"
+        fill="url(#fav_grad)"/>
+  <!-- Subtle gloss highlight on the upper half -->
+  <path d="M20.5 5h-9A2 2 0 0 0 9.5 7v3.6c2-1.4 4.4-2.1 6.5-2.1s4.5.7 6.5 2.1V7A2 2 0 0 0 20.5 5z"
+        fill="url(#fav_gloss)"/>
+  <!-- Citation marker dot -->
+  <circle cx="16" cy="11.5" r="1.7" fill="white" fill-opacity="0.95"/>
+</svg>

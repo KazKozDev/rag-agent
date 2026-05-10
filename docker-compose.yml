@@ -1,0 +1,36 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    environment:
+      - DATA_DIR=/data
+      - DOCS_DIR=/data/docs
+      - CHROMA_PATH=/data/chroma
+      - BM25_PATH=/data/bm25
+      - FEEDBACK_DB_PATH=/data/feedback.db
+    volumes:
+      - ./data:/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  ui:
+    build: .
+    env_file: .env
+    environment:
+      - API_URL=http://api:8000
+      - PUBLIC_API_URL=http://localhost:8000
+    command:
+      [
+        "streamlit", "run", "app/ui/streamlit_app.py",
+        "--server.port=8501", "--server.address=0.0.0.0"
+      ]
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
