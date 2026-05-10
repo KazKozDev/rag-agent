@@ -4,7 +4,7 @@ A small, hackable RAG agent. Hybrid retrieval (vector + BM25 fused with RRF), ci
 
 I wrote this because most production RAG either disappears under five layers of `BaseRetrieverAgentRunnableExecutor`, or it's a 30-line LangChain demo that hallucinates the moment you give it a real corpus. I wanted something in between, with the four or five details that actually move the needle on quality.
 
-![demo](demorag.png)
+![demo](app/ui/ddem.png)
 
 ## the graph
 
