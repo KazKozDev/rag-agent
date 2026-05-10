@@ -1,10 +1,10 @@
-# rag-agent-v2
-
-![demo](demorag.png)
+# RAG Agent
 
 A small, hackable RAG agent. Hybrid retrieval (vector + BM25 fused with RRF), citations down to the page number, a feedback loop in sqlite, and a LangGraph state machine that knows when to ask for clarification, when to re-search, and when to give up. About ~1.2k lines of Python in two docker containers. Every file is under 200 lines; you should just read them.
 
 I wrote this because most production RAG either disappears under five layers of `BaseRetrieverAgentRunnableExecutor`, or it's a 30-line LangChain demo that hallucinates the moment you give it a real corpus. I wanted something in between, with the four or five details that actually move the needle on quality.
+
+![demo](demorag.png)
 
 ## the graph
 
